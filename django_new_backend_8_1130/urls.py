@@ -21,20 +21,21 @@ from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
 urlpatterns = [
-    path('', include('home.urls')),
-    path('accounts/', include('allauth.urls')),
-    path('api/v1/', include('home.api.v1.urls')),
-    path('admin/', admin.site.urls),
-    path('users/', include('users.urls', namespace='users')),
-    path('rest-auth/', include('rest_auth.urls')),
+    path("", include("home.urls")),
+    path("accounts/", include("allauth.urls")),
+    path("api/v1/", include("home.api.v1.urls")),
+    path("admin/", admin.site.urls),
+    path("users/", include("users.urls", namespace="users")),
+    path("rest-auth/", include("rest_auth.urls")),
     # Override email confirm to use allauth's HTML view instead of rest_auth's API view
-    path('rest-auth/registration/account-confirm-email/<str:key>/', confirm_email),
-    path('rest-auth/registration/', include('rest_auth.registration.urls')),
+    path("rest-auth/registration/account-confirm-email/<str:key>/", confirm_email),
+    path("rest-auth/registration/", include("rest_auth.registration.urls")),
+    path("home/", include("home.urls")),
 ]
 
-admin.site.site_header = 'DJANGO-NEW-BACKEND-8'
-admin.site.site_title = 'DJANGO-NEW-BACKEND-8 Admin Portal'
-admin.site.index_title = 'DJANGO-NEW-BACKEND-8 Admin'
+admin.site.site_header = "DJANGO-NEW-BACKEND-8"
+admin.site.site_title = "DJANGO-NEW-BACKEND-8 Admin Portal"
+admin.site.index_title = "DJANGO-NEW-BACKEND-8 Admin"
 
 # swagger
 schema_view = get_schema_view(
