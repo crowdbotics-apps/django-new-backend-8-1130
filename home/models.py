@@ -42,3 +42,16 @@ class HomePage1(models.Model):
         null=True,
         related_name="homepage1_r1",
     )
+
+
+class NursingInstruction(models.Model):
+    "Generated Model"
+    name = models.CharField(max_length=255,)
+    key_word = models.CharField(blank=True, max_length=255,)
+    r3 = models.ForeignKey(
+        "users.User",
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
+        related_name="nursinginstruction_r3",
+    )
