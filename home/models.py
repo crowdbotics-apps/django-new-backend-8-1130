@@ -7,6 +7,7 @@ from django.db import models
 
 class CustomText(models.Model):
     title = models.CharField(max_length=150,)
+    r2 = models.BigIntegerField(blank=True, null=True,)
 
     def __str__(self):
         return self.title
@@ -22,8 +23,8 @@ class CustomText(models.Model):
 
 class HomePage(models.Model):
     body = models.TextField()
-    r2 = models.BigIntegerField(blank=True, null=True,)
-    r3 = models.BigIntegerField(blank=True, null=True,)
+    r2 = models.BigIntegerField(null=True, blank=True,)
+    r3 = models.BigIntegerField(null=True, blank=True,)
 
     @property
     def api(self):
@@ -39,9 +40,9 @@ class HomePage1(models.Model):
     body = models.TextField()
     r1 = models.ForeignKey(
         "home.HomePage",
-        on_delete=models.CASCADE,
-        blank=True,
         null=True,
+        blank=True,
+        on_delete=models.CASCADE,
         related_name="homepage1_r1",
     )
 
@@ -52,8 +53,8 @@ class NursingInstruction(models.Model):
     key_word = models.CharField(blank=True, max_length=255,)
     r3 = models.ForeignKey(
         "users.User",
-        on_delete=models.CASCADE,
-        blank=True,
         null=True,
+        blank=True,
+        on_delete=models.CASCADE,
         related_name="nursinginstruction_r3",
     )
