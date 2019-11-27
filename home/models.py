@@ -35,3 +35,10 @@ class HomePage(models.Model):
 class HomePage1(models.Model):
     "Generated Model"
     body = models.TextField()
+    r1 = models.ForeignKey(
+        "home.HomePage",
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
+        related_name="homepage1_r1",
+    )
