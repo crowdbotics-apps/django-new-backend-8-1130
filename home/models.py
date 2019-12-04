@@ -11,20 +11,20 @@ class CustomText(models.Model):
     r3 = models.BigIntegerField(null=True, blank=True,)
     r4 = models.ForeignKey(
         "home.HomePage",
-        on_delete=models.CASCADE,
-        blank=True,
         null=True,
+        blank=True,
+        on_delete=models.CASCADE,
         related_name="customtext_r4",
     )
     r5 = models.OneToOneField(
         "home.HomePage1",
-        on_delete=models.CASCADE,
-        blank=True,
         null=True,
+        blank=True,
+        on_delete=models.CASCADE,
         related_name="customtext_r5",
     )
     r6 = models.ManyToManyField(
-        "home.NursingInstruction", blank=True, null=True, related_name="customtext_r6",
+        "home.NursingInstruction", null=True, blank=True, related_name="customtext_r6",
     )
 
     def __str__(self):
@@ -76,3 +76,16 @@ class NursingInstruction(models.Model):
         on_delete=models.CASCADE,
         related_name="nursinginstruction_r3",
     )
+
+
+class R1x(models.Model):
+    "Generated Model"
+    r1 = models.ForeignKey(
+        "home.CustomText", on_delete=models.CASCADE, related_name="r1x_r1",
+    )
+    r2 = models.BigIntegerField()
+    r3 = models.BigIntegerField()
+    r4 = models.OneToOneField(
+        "home.NursingInstruction", on_delete=models.CASCADE, related_name="r1x_r4",
+    )
+    r5 = models.ManyToManyField("home.HomePage", related_name="r1x_r5",)

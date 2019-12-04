@@ -7,23 +7,40 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('home', '0008_customtext_r3'),
+        ("home", "0008_customtext_r3"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='customtext',
-            name='r4',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='customtext_r4', to='home.HomePage'),
+            model_name="customtext",
+            name="r4",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="customtext_r4",
+                to="home.HomePage",
+            ),
         ),
         migrations.AddField(
-            model_name='customtext',
-            name='r5',
-            field=models.OneToOneField(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='customtext_r5', to='home.HomePage1'),
+            model_name="customtext",
+            name="r5",
+            field=models.OneToOneField(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="customtext_r5",
+                to="home.HomePage1",
+            ),
         ),
         migrations.AddField(
-            model_name='customtext',
-            name='r6',
-            field=models.ManyToManyField(blank=True, null=True, related_name='customtext_r6', to='home.NursingInstruction'),
+            model_name="customtext",
+            name="r6",
+            field=models.ManyToManyField(
+                blank=True,
+                null=True,
+                related_name="customtext_r6",
+                to="home.NursingInstruction",
+            ),
         ),
     ]
