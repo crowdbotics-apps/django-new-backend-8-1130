@@ -89,3 +89,14 @@ class R1x(models.Model):
         "home.NursingInstruction", on_delete=models.CASCADE, related_name="r1x_r4",
     )
     r5 = models.ManyToManyField("home.HomePage", related_name="r1x_r5",)
+
+
+class R2d2(models.Model):
+    "Generated Model"
+    r1 = models.ForeignKey(
+        "home.HomePage", on_delete=models.CASCADE, related_name="r2d2_r1",
+    )
+    r2 = models.OneToOneField(
+        "home.CustomText", on_delete=models.CASCADE, related_name="r2d2_r2",
+    )
+    r3 = models.ManyToManyField("home.HomePage1", related_name="r2d2_r3",)

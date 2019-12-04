@@ -5,6 +5,7 @@ from .serializers import (
     HomePageSerializer,
     HomePage1Serializer,
     R1xSerializer,
+    R2d2Serializer,
 )
 
 from django import apps
@@ -26,7 +27,7 @@ from home.api.v1.serializers import (
     HomePageSerializer,
     UserSerializer,
 )
-from home.models import CustomText, HomePage, HomePage1, R1x
+from home.models import CustomText, HomePage, HomePage1, R1x, R2d2
 
 
 class SignupViewSet(ModelViewSet):
@@ -103,3 +104,8 @@ class HomePage1ViewSet(viewsets.ModelViewSet):
 class R1xViewSet(viewsets.ModelViewSet):
     serializer_class = R1xSerializer
     queryset = R1x.objects.all()
+
+
+class R2d2ViewSet(viewsets.ModelViewSet):
+    serializer_class = R2d2Serializer
+    queryset = R2d2.objects.all()

@@ -7,19 +7,44 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('home', '0009_auto_20191204_1603'),
+        ("home", "0009_auto_20191204_1603"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='R1x',
+            name="R1x",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('r2', models.BigIntegerField()),
-                ('r3', models.BigIntegerField()),
-                ('r1', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='r1x_r1', to='home.CustomText')),
-                ('r4', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, related_name='r1x_r4', to='home.NursingInstruction')),
-                ('r5', models.ManyToManyField(related_name='r1x_r5', to='home.HomePage')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("r2", models.BigIntegerField()),
+                ("r3", models.BigIntegerField()),
+                (
+                    "r1",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="r1x_r1",
+                        to="home.CustomText",
+                    ),
+                ),
+                (
+                    "r4",
+                    models.OneToOneField(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="r1x_r4",
+                        to="home.NursingInstruction",
+                    ),
+                ),
+                (
+                    "r5",
+                    models.ManyToManyField(related_name="r1x_r5", to="home.HomePage"),
+                ),
             ],
         ),
     ]
