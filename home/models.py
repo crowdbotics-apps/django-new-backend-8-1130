@@ -7,8 +7,25 @@ from django.db import models
 
 class CustomText(models.Model):
     title = models.CharField(max_length=150,)
-    r2 = models.BigIntegerField(blank=True, null=True,)
-    r3 = models.BigIntegerField(blank=True, null=True,)
+    r2 = models.BigIntegerField(null=True, blank=True,)
+    r3 = models.BigIntegerField(null=True, blank=True,)
+    r4 = models.ForeignKey(
+        "home.HomePage",
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
+        related_name="customtext_r4",
+    )
+    r5 = models.OneToOneField(
+        "home.HomePage1",
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
+        related_name="customtext_r5",
+    )
+    r6 = models.ManyToManyField(
+        "home.NursingInstruction", blank=True, null=True, related_name="customtext_r6",
+    )
 
     def __str__(self):
         return self.title
