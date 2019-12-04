@@ -106,6 +106,23 @@ class RX2(models.Model):
     "Generated Model"
     r1 = models.CharField(max_length=23,)
     r2 = models.DecimalField(max_digits=31, decimal_places=11,)
+    r3 = models.ForeignKey(
+        "home.CustomText",
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
+        related_name="rx2_r3",
+    )
+    r4 = models.OneToOneField(
+        "home.Ghh",
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
+        related_name="rx2_r4",
+    )
+    r5 = models.ManyToManyField(
+        "home.HomePage", blank=True, null=True, related_name="rx2_r5",
+    )
 
 
 class RX3(models.Model):
