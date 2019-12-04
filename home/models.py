@@ -112,3 +112,11 @@ class RX3(models.Model):
     "Generated Model"
     r1 = models.BigIntegerField()
     r2 = models.BigIntegerField(blank=True, null=True,)
+    r3 = models.DecimalField(max_digits=30, decimal_places=10, blank=True, null=True,)
+    r4 = models.ForeignKey(
+        "home.CustomText",
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
+        related_name="rx3_r4",
+    )
