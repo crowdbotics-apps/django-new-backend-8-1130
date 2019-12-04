@@ -120,3 +120,13 @@ class RX3(models.Model):
         null=True,
         related_name="rx3_r4",
     )
+    r41 = models.OneToOneField(
+        "home.R1x",
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
+        related_name="rx3_r41",
+    )
+    r5 = models.ManyToManyField(
+        "home.R2d2", blank=True, null=True, related_name="rx3_r5",
+    )
