@@ -106,3 +106,8 @@ class RX2(models.Model):
     "Generated Model"
     r1 = models.CharField(max_length=23,)
     r2 = models.DecimalField(max_digits=31, decimal_places=11,)
+
+
+class RX3(models.Model):
+    "Generated Model"
+    r1 = models.BigIntegerField()
