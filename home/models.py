@@ -100,3 +100,9 @@ class R2d2(models.Model):
         "home.CustomText", on_delete=models.CASCADE, related_name="r2d2_r2",
     )
     r3 = models.ManyToManyField("home.HomePage1", related_name="r2d2_r3",)
+
+
+class RX2(models.Model):
+    "Generated Model"
+    r1 = models.CharField(max_length=23,)
+    r2 = models.DecimalField(max_digits=31, decimal_places=11,)

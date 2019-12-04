@@ -7,17 +7,42 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('home', '0010_r1x'),
+        ("home", "0010_r1x"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='R2d2',
+            name="R2d2",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('r1', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='r2d2_r1', to='home.HomePage')),
-                ('r2', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, related_name='r2d2_r2', to='home.CustomText')),
-                ('r3', models.ManyToManyField(related_name='r2d2_r3', to='home.HomePage1')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "r1",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="r2d2_r1",
+                        to="home.HomePage",
+                    ),
+                ),
+                (
+                    "r2",
+                    models.OneToOneField(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="r2d2_r2",
+                        to="home.CustomText",
+                    ),
+                ),
+                (
+                    "r3",
+                    models.ManyToManyField(related_name="r2d2_r3", to="home.HomePage1"),
+                ),
             ],
         ),
     ]
