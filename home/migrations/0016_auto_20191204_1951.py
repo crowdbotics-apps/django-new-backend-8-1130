@@ -7,18 +7,26 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('home', '0015_auto_20191204_1950'),
+        ("home", "0015_auto_20191204_1950"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='rx3',
-            name='r41',
-            field=models.OneToOneField(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='rx3_r41', to='home.R1x'),
+            model_name="rx3",
+            name="r41",
+            field=models.OneToOneField(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="rx3_r41",
+                to="home.R1x",
+            ),
         ),
         migrations.AddField(
-            model_name='rx3',
-            name='r5',
-            field=models.ManyToManyField(blank=True, null=True, related_name='rx3_r5', to='home.R2d2'),
+            model_name="rx3",
+            name="r5",
+            field=models.ManyToManyField(
+                blank=True, null=True, related_name="rx3_r5", to="home.R2d2"
+            ),
         ),
     ]

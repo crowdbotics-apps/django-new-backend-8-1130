@@ -111,22 +111,28 @@ class RX2(models.Model):
 class RX3(models.Model):
     "Generated Model"
     r1 = models.BigIntegerField()
-    r2 = models.BigIntegerField(blank=True, null=True,)
-    r3 = models.DecimalField(max_digits=30, decimal_places=10, blank=True, null=True,)
+    r2 = models.BigIntegerField(null=True, blank=True,)
+    r3 = models.DecimalField(null=True, blank=True, max_digits=30, decimal_places=10,)
     r4 = models.ForeignKey(
         "home.CustomText",
-        on_delete=models.CASCADE,
-        blank=True,
         null=True,
+        blank=True,
+        on_delete=models.CASCADE,
         related_name="rx3_r4",
     )
     r41 = models.OneToOneField(
         "home.R1x",
-        on_delete=models.CASCADE,
-        blank=True,
         null=True,
+        blank=True,
+        on_delete=models.CASCADE,
         related_name="rx3_r41",
     )
     r5 = models.ManyToManyField(
-        "home.R2d2", blank=True, null=True, related_name="rx3_r5",
+        "home.R2d2", null=True, blank=True, related_name="rx3_r5",
     )
+
+
+class Ghh(models.Model):
+    "Generated Model"
+    r1 = models.BigIntegerField()
+    r2 = models.ManyToManyField("home.RX3", related_name="ghh_r2",)

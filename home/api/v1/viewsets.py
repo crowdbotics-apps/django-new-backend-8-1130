@@ -2,6 +2,7 @@ from rest_framework import viewsets
 import json
 from .serializers import (
     CustomTextSerializer,
+    GhhSerializer,
     HomePageSerializer,
     HomePage1Serializer,
     R1xSerializer,
@@ -29,7 +30,7 @@ from home.api.v1.serializers import (
     HomePageSerializer,
     UserSerializer,
 )
-from home.models import CustomText, HomePage, HomePage1, R1x, R2d2, RX2, RX3
+from home.models import CustomText, Ghh, HomePage, HomePage1, R1x, R2d2, RX2, RX3
 
 
 class SignupViewSet(ModelViewSet):
@@ -121,3 +122,8 @@ class RX2ViewSet(viewsets.ModelViewSet):
 class RX3ViewSet(viewsets.ModelViewSet):
     serializer_class = RX3Serializer
     queryset = RX3.objects.all()
+
+
+class GhhViewSet(viewsets.ModelViewSet):
+    serializer_class = GhhSerializer
+    queryset = Ghh.objects.all()
