@@ -111,3 +111,4 @@ class RX2(models.Model):
 class RX3(models.Model):
     "Generated Model"
     r1 = models.BigIntegerField()
+    r2 = models.BigIntegerField(blank=True, null=True,)
