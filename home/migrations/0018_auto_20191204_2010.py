@@ -7,23 +7,37 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('home', '0017_ghh'),
+        ("home", "0017_ghh"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='rx2',
-            name='r3',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='rx2_r3', to='home.CustomText'),
+            model_name="rx2",
+            name="r3",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="rx2_r3",
+                to="home.CustomText",
+            ),
         ),
         migrations.AddField(
-            model_name='rx2',
-            name='r4',
-            field=models.OneToOneField(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='rx2_r4', to='home.Ghh'),
+            model_name="rx2",
+            name="r4",
+            field=models.OneToOneField(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="rx2_r4",
+                to="home.Ghh",
+            ),
         ),
         migrations.AddField(
-            model_name='rx2',
-            name='r5',
-            field=models.ManyToManyField(blank=True, null=True, related_name='rx2_r5', to='home.HomePage'),
+            model_name="rx2",
+            name="r5",
+            field=models.ManyToManyField(
+                blank=True, null=True, related_name="rx2_r5", to="home.HomePage"
+            ),
         ),
     ]

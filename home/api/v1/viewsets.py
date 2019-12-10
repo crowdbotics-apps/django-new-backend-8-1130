@@ -1,3 +1,4 @@
+from rest_framework import authentication
 from rest_framework import viewsets
 import json
 from .serializers import (
@@ -9,6 +10,7 @@ from .serializers import (
     R2d2Serializer,
     RX2Serializer,
     RX3Serializer,
+    RxxxSerializer,
 )
 
 from django import apps
@@ -30,7 +32,7 @@ from home.api.v1.serializers import (
     HomePageSerializer,
     UserSerializer,
 )
-from home.models import CustomText, Ghh, HomePage, HomePage1, R1x, R2d2, RX2, RX3
+from home.models import CustomText, Ghh, HomePage, HomePage1, R1x, R2d2, RX2, RX3, Rxxx
 
 
 class SignupViewSet(ModelViewSet):
@@ -127,3 +129,12 @@ class RX3ViewSet(viewsets.ModelViewSet):
 class GhhViewSet(viewsets.ModelViewSet):
     serializer_class = GhhSerializer
     queryset = Ghh.objects.all()
+
+
+class RxxxViewSet(viewsets.ModelViewSet):
+    serializer_class = RxxxSerializer
+    authentication_classes = (
+        authentication.SessionAuthentication,
+        authentication.TokenAuthentication,
+    )
+    queryset = Rxxx.objects.all()

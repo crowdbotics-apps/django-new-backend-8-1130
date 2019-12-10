@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 
 # Create your models here.
@@ -108,20 +109,20 @@ class RX2(models.Model):
     r2 = models.DecimalField(max_digits=31, decimal_places=11,)
     r3 = models.ForeignKey(
         "home.CustomText",
-        on_delete=models.CASCADE,
-        blank=True,
         null=True,
+        blank=True,
+        on_delete=models.CASCADE,
         related_name="rx2_r3",
     )
     r4 = models.OneToOneField(
         "home.Ghh",
-        on_delete=models.CASCADE,
-        blank=True,
         null=True,
+        blank=True,
+        on_delete=models.CASCADE,
         related_name="rx2_r4",
     )
     r5 = models.ManyToManyField(
-        "home.HomePage", blank=True, null=True, related_name="rx2_r5",
+        "home.HomePage", null=True, blank=True, related_name="rx2_r5",
     )
 
 
@@ -153,3 +154,15 @@ class Ghh(models.Model):
     "Generated Model"
     r1 = models.BigIntegerField()
     r2 = models.ManyToManyField("home.RX3", related_name="ghh_r2",)
+
+
+class Rxxx(models.Model):
+    "Generated Model"
+    r1 = models.BigIntegerField()
+    r2 = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name="rxxx_r2",
+    )
