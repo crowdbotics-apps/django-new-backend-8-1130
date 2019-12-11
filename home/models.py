@@ -181,3 +181,13 @@ class XT2(models.Model):
     r1 = models.ForeignKey(
         "users.User", on_delete=models.CASCADE, related_name="xt2_r1",
     )
+
+
+class XT3(models.Model):
+    "Generated Model"
+    r1 = models.ForeignKey(
+        "users.User", on_delete=models.CASCADE, related_name="xt3_r1",
+    )
+    r2 = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="xt3_r2",
+    )
