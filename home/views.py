@@ -1,13 +1,14 @@
 from django.views.generic import CreateView, UpdateView, DetailView, ListView
 from django.shortcuts import render
 from .models import (
+    Rxxx,
+    Ghh,
     R2d2,
-    HomePage,
     HomePage1,
-    CustomText,
+    HomePage,
     NursingInstruction,
     RX3,
-    Ghh,
+    CustomText,
     RX2,
     R1x,
 )

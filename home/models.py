@@ -161,8 +161,9 @@ class Rxxx(models.Model):
     r1 = models.BigIntegerField()
     r2 = models.ForeignKey(
         settings.AUTH_USER_MODEL,
-        on_delete=models.CASCADE,
         null=True,
         blank=True,
+        on_delete=models.CASCADE,
         related_name="rxxx_r2",
     )
+    r3 = models.CharField(max_length=34, null=True, blank=True,)
