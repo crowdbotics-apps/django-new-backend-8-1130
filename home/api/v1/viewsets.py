@@ -12,6 +12,7 @@ from .serializers import (
     RX3Serializer,
     RxxxSerializer,
     XT1Serializer,
+    XT2Serializer,
 )
 
 from django import apps
@@ -44,6 +45,7 @@ from home.models import (
     RX3,
     Rxxx,
     XT1,
+    XT2,
 )
 
 
@@ -159,3 +161,12 @@ class XT1ViewSet(viewsets.ModelViewSet):
         authentication.TokenAuthentication,
     )
     queryset = XT1.objects.all()
+
+
+class XT2ViewSet(viewsets.ModelViewSet):
+    serializer_class = XT2Serializer
+    authentication_classes = (
+        authentication.SessionAuthentication,
+        authentication.TokenAuthentication,
+    )
+    queryset = XT2.objects.all()

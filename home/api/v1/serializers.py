@@ -19,6 +19,7 @@ from home.models import (
     RX3,
     Rxxx,
     XT1,
+    XT2,
 )
 
 User = get_user_model()
@@ -140,4 +141,10 @@ class RxxxSerializer(serializers.ModelSerializer):
 class XT1Serializer(serializers.ModelSerializer):
     class Meta:
         model = XT1
+        fields = "__all__"
+
+
+class XT2Serializer(serializers.ModelSerializer):
+    class Meta:
+        model = XT2
         fields = "__all__"
