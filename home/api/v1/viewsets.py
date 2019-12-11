@@ -11,6 +11,7 @@ from .serializers import (
     RX2Serializer,
     RX3Serializer,
     RxxxSerializer,
+    XT1Serializer,
 )
 
 from django import apps
@@ -32,7 +33,18 @@ from home.api.v1.serializers import (
     HomePageSerializer,
     UserSerializer,
 )
-from home.models import CustomText, Ghh, HomePage, HomePage1, R1x, R2d2, RX2, RX3, Rxxx
+from home.models import (
+    CustomText,
+    Ghh,
+    HomePage,
+    HomePage1,
+    R1x,
+    R2d2,
+    RX2,
+    RX3,
+    Rxxx,
+    XT1,
+)
 
 
 class SignupViewSet(ModelViewSet):
@@ -138,3 +150,12 @@ class RxxxViewSet(viewsets.ModelViewSet):
         authentication.TokenAuthentication,
     )
     queryset = Rxxx.objects.all()
+
+
+class XT1ViewSet(viewsets.ModelViewSet):
+    serializer_class = XT1Serializer
+    authentication_classes = (
+        authentication.SessionAuthentication,
+        authentication.TokenAuthentication,
+    )
+    queryset = XT1.objects.all()

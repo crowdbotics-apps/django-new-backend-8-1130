@@ -166,4 +166,11 @@ class Rxxx(models.Model):
         on_delete=models.CASCADE,
         related_name="rxxx_r2",
     )
-    r3 = models.CharField(max_length=34, null=True, blank=True,)
+    r3 = models.CharField(null=True, blank=True, max_length=34,)
+
+
+class XT1(models.Model):
+    "Generated Model"
+    r1 = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="xt1_r1",
+    )
